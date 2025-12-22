@@ -1,0 +1,138 @@
+.testimonials {
+  padding-bottom: $tstmnls-block-padding;
+
+  &__inner {
+    font-family: $poppins;
+  }
+
+  &__overline {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: $bold;
+    font-size: $small-fs;
+    line-height: 100%;
+    letter-spacing: $minimal-spacing;
+    color: $l-gray;
+  }
+
+  &__title {
+    margin: $small-gap 0 0 0;
+    font-weight: $bold-fw;
+    font-size: $medium-gap;
+    line-height: $medium-up-lh;
+    color: $d-blue;
+  }
+}
+
+.testimonials__items {
+  margin-top: $block-gap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $base-gap;
+  justify-content: space-between;
+
+  @include on-tablet {
+    margin-top: $big-gap;
+    gap: 30px;
+  }
+
+  @include on-small-desktop {
+    margin-top: 85px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  @include on-desktop {
+    gap: 30px;
+  }
+}
+
+.testimonials-item {
+  background: $white;
+  font-family: $opensans;
+  border-radius: $small-radius;
+  box-shadow: 0 9px 18px 0 $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: $medium-gap 37px;
+  box-sizing: border-box;
+  transition:
+    transform $duration ease,
+    box-shadow $duration ease;
+
+  &:hover {
+    transform: scale($scale);
+  }
+
+  &__photo {
+    width: $tstmnls-block-size;
+    height: $tstmnls-block-size;
+
+    @include on-tablet {
+      width: 250px;
+      height: 250px;
+    }
+
+    @include on-small-desktop {
+      width: $tstmnls-block-size;
+      height: $tstmnls-block-size;
+    }
+  }
+
+  &__quotes {
+    width: $small-size;
+    height: $small-size;
+    background-image: url(../images/testimonials/quotes.png);
+    margin-top: $base-gap;
+  }
+
+  &__text {
+    width: $tstmnls-block-size;
+    font-weight: $bold-fw;
+    font-size: $small-fs;
+    line-height: $big-lh;
+    text-align: center;
+    color: $gray;
+
+    @include on-tablet {
+      width: $tablet-block-w;
+    }
+
+    @include on-small-desktop {
+      width: $tstmnls-block-size;
+    }
+
+    @include on-desktop {
+      width: 250px;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: $bold-fw;
+    font-size: $small-fs;
+    line-height: $big-lh;
+    color: $d-blue;
+  }
+
+  &__major {
+    margin: 4px 0 0;
+    font-family: $poppins;
+    text-transform: uppercase;
+    font-weight: $bold;
+    font-size: $small-fs;
+    line-height: 100%;
+    letter-spacing: $minimal-spacing;
+    color: $l-gray;
+  }
+
+  @include on-tablet {
+    padding: $medium-gap 95px;
+  }
+
+  @include on-tablet {
+    padding: $medium-gap 37px;
+  }
+}

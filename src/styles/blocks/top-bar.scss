@@ -1,0 +1,108 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $poppins;
+
+  &__left-side {
+    display: flex;
+    gap: $medium-gap;
+    align-items: center;
+  }
+
+  &__logo {
+    width: $logo-w;
+    height: $logo-h;
+  }
+
+  &__icon {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: $small-size;
+    width: $small-size;
+    transition: transform $duration ease;
+
+    &:hover {
+      transform: scale($scale);
+    }
+
+    @include on-small-desktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: $bold;
+    font-size: $small-fs;
+    line-height: $big-lh;
+    letter-spacing: $minimal-spacing;
+
+    &--highlight {
+      color: $white;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        display: block;
+        width: 100%;
+        height: $minimal-spacing;
+        background-color: $blue;
+        transform: translateX(-52%);
+        border-radius: $min-border-radius;
+      }
+    }
+  }
+}
+
+.menu {
+  display: none;
+
+  @include on-small-desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: $block-gap;
+  }
+
+  &__link {
+    color: $white;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: $bold;
+    font-size: $small-fs;
+    line-height: $big-lh;
+    letter-spacing: $minimal-spacing;
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      bottom: -8px;
+      display: block;
+      width: 100%;
+      height: $minimal-spacing;
+      background-color: $blue;
+      transition: transform $duration ease;
+      transform: scale(0);
+      transform-origin: left;
+      border-radius: $min-border-radius;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

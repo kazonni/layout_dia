@@ -1,0 +1,89 @@
+.vpr {
+  background-color: $white;
+  background-image: url(../images/vpr/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1000px auto;
+  padding: $big-padding 0 $big-padding 0;
+
+  @include on-tablet {
+    padding: $tablet-huge-padding 0 $tablet-huge-padding 0;
+  }
+
+  @include on-small-desktop {
+    background-size: $desktop-bg-size auto;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include on-small-desktop {
+      width: 754px;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    font-family: $poppins;
+    font-weight: $bold-fw;
+    font-size: $medium-up-fs;
+    line-height: $medium-lh;
+    color: $d-blue;
+    margin: 0;
+
+    @include on-tablet {
+      font-size: $big-fs;
+    }
+  }
+
+  &__text {
+    margin: $base-gap 0 0 0;
+    font-family: $opensans;
+    font-weight: $bold-fw;
+    font-size: $base-up-fs;
+    line-height: $big-lh;
+    color: $gray;
+
+    @include on-tablet {
+      font-size: $regular-fs;
+    }
+  }
+
+  &__button {
+    font-family: $poppins;
+    font-weight: $bold-fw;
+    font-size: $small-fs;
+    line-height: 100%;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $small-border-radius;
+    width: $medium-w;
+    height: $big-button-h;
+    margin-top: $big-gap;
+    background-color: $blue;
+    color: $white;
+    transition:
+      transform $duration ease,
+      box-shadow $duration ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: $btn-shadow;
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: $btn-active-shadow;
+    }
+
+    @include on-tablet {
+      margin-top: $huge-gap;
+      width: $tablet-button-w;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.inner-menu {
+  position: absolute;
+  padding: $header-padding;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  transition: all $duration ease;
+  transform: translateX(-100%);
+  pointer-events: none;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $d-gray;
+  overflow: auto;
+
+  @include on-tablet {
+    padding: $medium-padding;
+  }
+
+  @include on-small-desktop {
+    display: none;
+  }
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__list {
+    font-family: $poppins;
+    margin-top: 60px;
+    text-align: right;
+    list-style: none;
+
+    @include on-tablet {
+      margin-top: $tablet-margin;
+    }
+  }
+
+  &__item {
+    margin-top: 50px;
+
+    @include on-tablet {
+      margin-top: 70px;
+    }
+  }
+
+  &__link {
+    color: $white;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      width: 100%;
+      height: $minimal-spacing;
+      background-color: $blue;
+      transition: transform $duration ease;
+      transform: scale(0);
+      transform-origin: right;
+      border-radius: $min-border-radius;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+  }
+}
+
+.icon {
+  &--menu {
+    background-image: url(../images/burger.png);
+
+    &:hover {
+      background-image: url(../images/icon-burger-menu-hover.png);
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icon-close.png);
+  }
+}

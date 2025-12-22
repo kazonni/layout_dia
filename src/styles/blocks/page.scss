@@ -1,0 +1,24 @@
+.page {
+  scroll-behavior: smooth;
+
+  &:has(.inner-menu:target) {
+    overflow: hidden;
+  }
+
+  &__container {
+    width: $medium-w;
+    margin: 0 auto;
+
+    @include on-tablet {
+      width: 560px;
+    }
+
+    @include on-small-desktop {
+      width: 920px;
+    }
+
+    @include on-design {
+      width: 1148px;
+    }
+  }
+}

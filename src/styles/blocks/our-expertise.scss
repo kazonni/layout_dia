@@ -1,0 +1,97 @@
+.our-expertise {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding-top: $big-padding;
+  font-family: $poppins;
+  background-color: $white;
+  border-radius: $border-radius;
+
+  @include on-tablet {
+    padding-top: $tablet-padding;
+  }
+
+  &__title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: $bold-fw;
+    font-size: $medium-up-fs;
+    line-height: $medium-lh;
+    color: $d-blue;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: $big-gap;
+    text-align: center;
+    margin-top: $big-gap;
+    padding-bottom: $big-padding;
+
+    @include on-tablet {
+      gap: $big-padding;
+      margin-top: $huge-gap;
+      padding-bottom: $tablet-padding;
+    }
+
+    @include on-small-desktop {
+      flex-direction: row;
+      gap: 137px;
+      padding-bottom: 134px;
+    }
+
+    @include on-design {
+      flex-direction: row;
+      gap: 177px;
+      padding-bottom: 155px;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform $duration ease,
+    box-shadow $duration ease;
+
+  &:hover {
+    transform: scale($scale);
+  }
+
+  &__image {
+    width: $card-size;
+    height: $card-size;
+    border-radius: $small-radius;
+  }
+
+  &__title {
+    padding: 0;
+    margin: $medium-gap 0 0;
+    font-size: 20px;
+    line-height: $middle-lh;
+    color: $d-blue;
+  }
+
+  &__text {
+    font-family: $opensans;
+    margin: $small-gap 0 0 0;
+    font-size: $base-fs;
+    line-height: $big-lh;
+    color: $gray;
+
+    @include on-tablet {
+      max-width: $tablet-block-w;
+    }
+
+    @include on-small-desktop {
+      max-width: 214px;
+    }
+
+    @include on-desktop {
+      max-width: $tablet-button-w;
+    }
+  }
+}
