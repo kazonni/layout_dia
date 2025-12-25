@@ -85,6 +85,8 @@
   }
 
   &__link {
+    position: relative;
+    display: block;
     font-family: $poppins;
     font-weight: $bold;
     font-size: $small-fs;
@@ -93,6 +95,29 @@
     text-transform: uppercase;
     color: $white;
     text-decoration: none;
+    transition: all $duration ease;
+
+    &:hover {
+      color: $l-blue;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      width: 100%;
+      height: $minimal-spacing;
+      background-color: $blue;
+      transition: transform $duration ease;
+      transform: scale(0);
+      transform-origin: right;
+      border-radius: $min-border-radius;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 }
 
@@ -214,6 +239,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: all $duration ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     &--facebook {
       background-image: url(../images/socials/facebook.png);
