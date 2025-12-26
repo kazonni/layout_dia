@@ -436,10 +436,10 @@
               <h2 class="footer__title">Send us a message</h2>
 
               <form
-                action="#footer-form"
-                method="get"
+                action="#"
+                method="post"
                 class="footer-form"
-                id="footer-form"
+                onsubmit="this.reset(); return false;"
               >
                 <label class="footer-form__field">
                   <input
